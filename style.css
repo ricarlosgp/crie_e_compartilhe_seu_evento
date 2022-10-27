@@ -1,0 +1,717 @@
+/*PROJETO 03 CRIAR EVENTO*/
+
+* { /*esse asterixo é chamado de seletor universal de todo o meu projeto para o dev determinar as larguran,pading e não
+    o navegador*/
+    margin: 0;
+    padding: 0;
+    border: none; /*vai visualizar as bordas de todas os containner */
+    box-sizing: border-box; /*não vai exceder nenhuma caxia da outra*/
+    
+   
+}
+
+body{/*body=corpo*/
+    background: #E5E5E5;
+    min-height: 100vh;
+    overflow-x: hidden;    
+}
+body, input, button, select, textarea {
+    font-family: 'Poppins', sans-serif;
+}
+
+body::before {
+    /*body::beforce ou antes do corpo. Beforce=antes  After=depois. O ::beforce vem
+    antes do header(cabeçalho) ou do main(principal). O after vêm após o header/main.  
+    ::beforce é um pseudoelemento que é o primeiro filho do elemento selecionado.
+    Nesse caso estamos trazendo o fundo preto para frente do body utilizando o
+    body::beforce*/
+    content: ''; /*content=conteúdo é utilizado sempre que utilizar o ::beforce. 
+    Pode colocar texto ou deixalr o elemento vazio ''*/
+    width: 100%;
+    height: 368px;
+    background: #121214;
+    
+
+    position: absolute; /*se não colocar o body::beforce não irá sobrepor o conteúdo do body*/
+    top: 0; /* o position desbloqueia o top, hight, bottom e left. Não precisamos usar margem:0*/
+    left: 0;/* o position desbloqueia o top, hight, bottom e left. Não precisamos usar margem:0*/
+    z-index: -1; /* o position também destrava a propriedade z-index
+    o z-index -1 fará com que o ::beforce fique por trás do conteúdo do body que no caso
+    é o <h1> o <p> e o <form>  */    
+}
+
+.page {
+    width: 736px;     
+    margin: auto;   
+}
+
+/*--------------------Início do cabeçalho---------------------*/
+.page header {
+    
+    width: 736px ; /*largura da caixa header é a mesma da form*/
+    height: 160px; /*altura da caixa header*/ 
+    margin-top: 80px; /*distância da caixa header para o body*/
+    
+}
+.page header h1 {
+    
+    width: 319px; /*largura da caixa H1 contida no header*/
+    margin: 0;/*a caixa h1 terá margens zerada em left e top da caixa header*/
+    height: 84px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px; 
+    color: white;      
+    
+}
+.page header p {
+
+    width: 319px; /*largura da caixa P contida no header*/
+    margin-top: 24px; /*a caixa do P terá uma distência de 24px da caixa H1*/
+
+    font-size: 16px;
+    line-height: 26px;
+    color: #42D3FF;       
+}
+/*----------------------FINAL do cabeçalho------------------------*/
+
+/*......................INÍCO DA CAIXA PRINCIPAL - FORM.................*/
+
+
+
+#my-form {
+    width: 736px;
+    height: 1430px;
+    background: #FAFAFC;
+    margin-top: 42px;
+    border-radius: 8px 8px 0px 0px;
+       
+}
+
+/*.......INÍCO DE TODO CONTAINER INFORMAÇÕES DO EVENTO..........*/
+
+#informações {
+    margin-top: 64px;
+    margin-bottom: 24px;
+    width: 608px;
+    height: 722px;
+    margin-left: 64px;
+    
+       
+}
+
+/*************INÍCIO container título do evento*****************/
+
+#informações legend {
+    
+    border-bottom:1px solid #E6E6F0;
+    padding-bottom: 16px;
+
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    color: #32264D;
+}
+
+.input-wrapper-titulo {/**/
+    
+    margin-top: 24px;/*distanciar toda minha caixa titulo do evento do informações
+    do evento*/
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.input-wrapper-titulo label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4E4958;
+    margin-bottom: 8px; /*distanciando verticalmente o label do input*/
+}
+.input-wrapper-titulo label span {
+    margin-left: 12px; /* distanciando horizontalmente o label do labelspan*/
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #C1BCCC;
+}
+
+.input-wrapper-titulo span:hover {
+    color: #434149; /*ao passar o mouse sobre o span ele vai suavizar o texto*/
+}
+
+.input-wrapper-titulo input {
+    border: 1px solid #E6E6F0;
+    background: #FAFAFC;
+    border-radius: 8px;
+    height: 56px;
+    padding: 0 24px;
+
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 26px;
+    color: #C1BCCC;   
+}
+
+/*************FIM container título do evento*****************/
+
+/*************INÍCIO container link do evento****************/
+
+.input-wrapper-link {
+    
+    margin-top: 24px;/*distanciar verticalmente toda minha caixa link da caixa titulo do evento*/
+    display: flex; /*uma ao lado da outra horizontalmente*/
+    flex-direction: column; /*para ficar em coluna ou verticalmente*/
+}
+
+.input-wrapper-link label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4E4958;
+    margin-bottom: 8px; /*distanciando verticalmente o label do input*/
+}
+
+.input-wrapper-link span {
+    margin-left: 12px; /* distanciando horizontalmente o label do labelspan*/
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #C1BCCC;
+}
+
+.input-wrapper-link span:hover {
+    color: #434149; /*ao passar o mouse sobre o span ele vai suavizar o texto*/
+}
+
+.input-wrapper-link input {
+    border: 1px solid #E6E6F0;
+    background: #FAFAFC;
+    border-radius: 8px;
+    height: 56px;
+    padding: 0 24px;
+
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 26px;
+    color: #C1BCCC;   
+}
+
+/*************FIM do container link do evento****************/
+
+/*************INÍCIO container Whatsapp para contato********/
+
+.input-wrapper-whatsapp {
+    
+    margin-top: 24px;/*distanciar verticalmente toda minha caixa link da caixa titulo do evento*/
+    display: flex; /*uma ao lado da outra horizontalmente*/
+    flex-direction: column; /*para ficar em coluna ou verticalmente*/
+}
+
+.input-wrapper-whatsapp label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4E4958;
+    margin-bottom: 8px; /*distanciando verticalmente o label do input*/
+}
+
+.input-wrapper-whatsapp span {
+    margin-left: 12px; /* distanciando horizontalmente o label do labelspan*/
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #C1BCCC;
+
+}
+
+.input-wrapper-whatsapp span:hover {
+    color: #434149; /*ao passar o mouse sobre o span ele vai suavizar o texto*/
+}
+
+.input-wrapper-whatsapp input {
+    border: 1px solid #E6E6F0;
+    background: #FAFAFC;
+    border-radius: 8px;
+    height: 56px;
+    padding: 0 24px;
+
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 26px;
+    color: #C1BCCC; 
+}
+
+/*************FIM do container Whatsapp para contato********/
+ 
+/*************INÍCIO do container informações extras********/
+
+.input-wrapper-extras {
+    
+    margin-top: 24px;/*distanciar verticalmente toda minha caixa link da caixa titulo do evento*/
+    display: flex; /*uma ao lado da outra horizontalmente*/
+    flex-direction: column; /*para ficar em coluna ou verticalmente*/
+    
+}
+
+.input-wrapper-extras label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4E4958;
+    margin-bottom: 8px; /*distanciando verticalmente o label do input*/
+}
+
+.input-wrapper-extras textarea {
+    border: 1px solid #E6E6F0;
+    background: #FAFAFC;
+    border-radius: 8px;
+    height: 168px;
+    padding: 0 24px;
+
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 26px;
+    color: #C1BCCC; 
+}
+
+/*************FIM do container informações extras********/
+
+/*************INÍCIO do container categoria********/
+
+.input-wrapper-categoria {
+   
+    margin-top: 24px;/*distanciar verticalmente toda minha caixa link da caixa titulo do evento*/
+    display: flex; /*uma ao lado da outra horizontalmente*/
+    flex-direction: column; /*para ficar em coluna ou verticalmente*/
+}
+
+.input-wrapper-categoria label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4E4958;
+    margin-bottom: 8px; /*distanciando verticalmente o label do input*/
+}
+
+.input-wrapper-categoria select {
+    appearance: none; /*removendo toda aparência da caixa select ou seja, cetas ...*/
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_54)'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_54'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat; /*remover as repetições do background-image que era as setas*/
+    background-position: right 24px top 50%; /*a seta ficará na posição à direita com distância da borda direita de
+    24px e ficará centralizada verticalmente dentro de sua caixa ou eixo*/
+    border-radius: 8px;
+    height: 56px;
+    padding: 0 24px;
+
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 26px;
+    color: #C1BCCC;
+       
+}
+
+/*************FIM do container categoria********/
+
+/*.......FIM DE TODO CONTAINER INFORMAÇÕES DO EVENTO..........*/
+
+
+/*.......INÍCO DE TODO CONTAINER PRIVACIDADE..........*/
+
+#privacidade {
+    margin-bottom: 48px;
+    margin-top: 24px;
+    width: 608px;
+    height: 322px;
+    margin-left: 64px;
+}
+
+/*----------------------INÍCIO DA CAIXA LEGEND--------------------------------*/
+#privacidade legend {
+   
+    border-bottom:1px solid #E6E6F0;
+    padding-bottom: 16px;
+
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    color: #32264D;
+}
+
+/*----------------------FINAL DA CAIXA CONTAINER LEGEND--------------------------------*/
+
+/*----------------------INÍCIO DA CAIXA EMAIL--------------------------------*/
+.input-wrapper-email {
+    
+    margin-top: 24px;/*distanciar toda minha caixa titulo do evento do informações
+    do evento*/
+    
+    display: flex;
+    flex-direction: column;
+
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4E4958;
+    margin-bottom: 8px; /*distanciando verticalmente o label do input*/
+}
+
+.input-wrapper-email label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4E4958;
+    margin-bottom: 8px; /*distanciando verticalmente o label do input*/
+}
+
+.input-wrapper-email label span {
+    margin-left: 12px; /* distanciando horizontalmente o label do labelspan*/
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #C1BCCC;
+}
+
+.input-wrapper-email span:hover {
+    color: #434149; /*ao passar o mouse sobre o span ele vai suavizar o texto*/
+}
+
+.input-wrapper-email input {
+    border: 1px solid #E6E6F0;
+    background: #FAFAFC;
+    border-radius: 8px;
+    height: 56px;
+    padding: 0 24px;
+
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 26px;
+    color: #C1BCCC;   
+}
+
+/*----------------------FINAL DA CAIXA EMAIL--------------------------------*/
+
+/*----------------------INÍCIO DA CAIXA SENHA--------------------------------*/
+
+.input-wrapper-senha {
+    
+    margin-top: 24px;/*distanciar toda minha caixa titulo do evento do informações
+    do evento*/
+    
+    display: flex;
+    flex-direction: column;
+
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4E4958;
+    margin-bottom: 8px; /*distanciando verticalmente o label do input*/
+}
+
+.input-wrapper-senha label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4E4958;
+    margin-bottom: 8px; /*distanciando verticalmente o label do input*/
+}
+
+.input-wrapper-senha label span {
+    margin-left: 12px; /* distanciando horizontalmente o label do labelspan*/
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #C1BCCC;
+}
+
+.input-wrapper-senha span:hover {
+    color: #434149; /*ao passar o mouse sobre o span ele vai suavizar o texto*/
+}
+
+.input-wrapper-senha input {
+    border: 1px solid #E6E6F0;
+    background: #FAFAFC;
+    border-radius: 8px;
+    height: 56px;
+    padding: 0 24px;
+
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 26px;
+    color: #C1BCCC;   
+}
+
+/*----------------------FIM DA CAIXA SENHA--------------------------------*/
+
+/*----------------------INÍCIO DO CHECKBOX--------------------------------*/
+
+.checkbox-wrapper {
+    
+    margin-top: 19px;/*distanciar toda minha caixa checkbox da senha de acesso*/
+    position: relative;/*ser relaitovo ao .checkbox-wrapper input para que ao dar tab
+    possa selecionar o marcador e sem esse relative não vai dar certo*/  
+    
+}
+
+.checkbox-wrapper label {   
+    display: flex; /*colocar o marcador ao lado nome evento privador horizontamente*/ 
+    align-items: center;/* alinhar no eixo horizontal o marcador com evento privado em seu eixo principal*/
+    margin: 0; /*colcando o nome evento privado junto com o marcador*/
+    font-size: 14px; /*tamanho da fonte do nome evento privado*/
+    line-height: 24px; /*altura da linha da caixa que contem o evento privado*/
+    color: #4E4958;
+    gap: 16px;/*espaçamento horizontal do marcador para o texto*/
+}
+
+.checkbox-wrapper label::before { /*usando a sudoclass beforce para adicionar um elemento através do css
+     */
+    content: ''; /*conteúdo vazio*/
+    width: 24px;
+    height: 24px;
+    border: 1px solid #0bd10b;
+    border-radius: 8px;   
+}
+
+.checkbox-wrapper input{
+    /*estou configurando o botão padrão para ficar dentro do botão de imagem para que ao dar tab
+    ele possa selecionar e marcar com barra de espaço. Para isso precisamos do position: relative
+    do .checkbox-wrapper  */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 24px; /*mesma largura da imagem contida no .checkbox-wrapper label::before para dar impressão
+    de uma caixa só  */
+    height: 24px;/*mesma altura da imagem contida no .checkbox-wrapper label::before para dar impressão
+    de uma caixa só  */
+    opacity: 0; /*para ficar invisível dentro da caixa que contêm a imagem*/
+}
+
+.checkbox-wrapper input:checked + label::before {
+    /*quando meu input estiver checked, pegue o label::beforce e faça alguma alteração
+    que no caso será a imagem da seta verde através do background-image abaixo poderia ser uma cor
+    ou outra coisa.... */
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_814_20)'%3E%3Cpath d='M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z' fill='%2342D3FF'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_814_20'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+
+.checkbox-wrapper input:focus + label::before {
+    /*essa sudoclass focus é para quando o input(marcador) estiver na posição focus, pegue o
+    + label::before e faça uma alteração que no caso é contorno preto para acessibilidade*/
+
+    outline: 2px solid black; /*outline = contorno*/
+}
+
+/*----------------------FIM DO CHECKBOX--------------------------------*/
+
+/*----------------------INÍCIO DIA E HORA----------------------------- */
+#diaehora{
+    
+    width: 608px;
+    height: 162px; 
+    margin-left: 64px;
+}
+
+.input-wrapper-first {
+    
+    margin-top: 24px;/*distanciar toda minha caixa titulo do evento do informações
+    do evento*/
+    
+    display: flex;
+    flex-direction: column;
+
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4E4958;
+    margin-bottom: 8px; /*distanciando verticalmente o label do input*/
+}
+
+.input-wrapper-first label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4E4958;
+    margin-bottom: 8px; /*distanciando verticalmente o label do input*/
+}
+
+.input-wrapper-first input {
+    border: 1px solid #E6E6F0;
+    background: #FAFAFC;
+    border-radius: 8px;
+    height: 56px;
+    padding: 0 24px;
+
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 26px;
+    color: #C1BCCC;   
+}
+
+.input-wrapper-second {
+    
+    margin-top: 24px;/*distanciar toda minha caixa titulo do evento do informações
+    do evento*/
+    
+    display: flex;
+    flex-direction: column;
+
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4E4958;
+    margin-bottom: 8px; /*distanciando verticalmente o label do input*/
+}
+
+.input-wrapper-second label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4E4958;
+    margin-bottom: 8px; /*distanciando verticalmente o label do input*/
+}
+
+.input-wrapper-second input {
+    border: 1px solid #E6E6F0;
+    background: #FAFAFC;
+    border-radius: 8px;
+    height: 56px;
+    padding: 0 24px;
+
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 26px;
+    color: #C1BCCC;   
+}
+
+
+.input-wrapper-third {
+    
+    margin-top: 24px;/*distanciar toda minha caixa titulo do evento do informações
+    do evento*/
+    
+    display: flex;
+    flex-direction: column;
+
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4E4958;
+    margin-bottom: 8px; /*distanciando verticalmente o label do input*/
+}
+
+.input-wrapper-third label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4E4958;
+    margin-bottom: 8px; /*distanciando verticalmente o label do input*/
+}
+
+.input-wrapper-third input {
+    border: 1px solid #E6E6F0;
+    background: #FAFAFC;
+    border-radius: 8px;
+    height: 56px;
+    padding: 0 24px;
+
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 26px;
+    color: #C1BCCC;   
+}
+
+.col-3 {
+    display: flex; /*todas as caixas DATA DAS ATÉ ficarão uma ao lado da outra*/
+    gap: 20px; /*espaçamento das caixas DATA DAS ATÉ*/
+}
+
+.input-wrapper-first {/*estou definindo a largura do botão data*/
+    width: 312px;
+}
+
+/*footer*/
+
+footer { /*containner footer*/
+    background: #F0F0F4;
+    width: auto;
+    height: 136px;
+    border-radius: 0px 0px 8px 8px;
+    padding: 40px 63px;
+}
+
+button { /*botão salvar*/
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    color: #FFFFFF;   
+    
+    width: 608px;
+    height: 56px;
+    background: #36f38b;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+}
+
+button:hover {
+    background: #027737; /*ao passar o mouse sobre o botão salvar ele vai suavizar o texto*/
+}
+
+/*---------------FIM DO FOOTER---------------*/
+
+input:invalid{
+    /*os campos que foram definidos no html como required(obrigatório) enquanto não forem preenchidos
+    ficarão com essa configuração. Essas sudoclass que estão após os : serverve para verificar o estado
+    do meu */
+    border: 1px solid red;
+}
